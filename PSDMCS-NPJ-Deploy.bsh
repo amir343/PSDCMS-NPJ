@@ -1,0 +1,5 @@
+source("init"); 
+
+print("Start PSDCMS-NPJ deployment");
+deploy("PSDCMS-NPJ");
+print("End PSDCMS-NPJ deployment");

@@ -1,0 +1,83 @@
+<project name="PSDCMS-NPJ" default="">
+
+	<!-- ================================== -->
+	<!--    				Properties		          -->
+	<!-- ================================== -->
+
+	<property file="etc/build.properties" />
+	<property file="etc/execute.properties" />
+
+	<property name="etc" location="${basedir}/etc" />
+	<property name="lib" location="${basedir}/lib" />
+	<property name="externals" location="${basedir}/externals" />
+	<property name="logs" location="${basedir}/logs" />
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="init" depends="check">
+		<path id="classpath">
+			<pathelement location="${etc}/oscar" />
+			<pathelement location="${etc}/joram" />
+			<pathelement location="${basedir}/examples" />
+
+			<pathelement path="${lib}/jade.jar" />
+
+			<pathelement path="${jade-fractal.path}" />
+			<pathelement path="${reflex-fractal.path}" />
+			<pathelement path="${fractal-deployment-local.path}" />
+			
+			<pathelement path="${objectweb.ant.tasks.path}" />
+			<pathelement path="${asm.path}" />
+			<pathelement path="${jonathan.path}" />
+			<pathelement path="${fractal.path}" />
+			<pathelement path="${fractaladl.path}" />
+			<pathelement path="${fractalrmi.path}" />
+			<pathelement path="${julia.path}" />
+
+			<pathelement path="${joram.path}" />
+			<pathelement path="${oscar.path}" />
+			<pathelement path="${bsh.path}" />
+			<pathelement path="${bsh.path}" />
+			<pathelement path="./externals/psdcms-npj.jar" />
+		</path>
+
+
+		<path id="beanshell-classpath">
+			<path refid="classpath" />
+			<pathelement path="${bundlejoram.path}" />
+		</path>
+	</target>
+
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: check                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="check">
+		<echo message="The 'build.properties' file must be configured" />
+		<fail />
+	</target>
+
+
+	<!-- ====================================== -->
+	<!-- 			PSDCMS-NPJ-Deploy         -->
+	<!-- ====================================== -->
+	<target name="PSDCMS-Deploy">
+		<java classname="${run.beanshell-console.classname}" classpathref="beanshell-classpath" fork="yes" failonerror="no">
+			<arg line="PSDCMS-NPJ-Deploy.bsh" />
+			<jvmarg line="${jvm.parameters}" />
+		</java>
+	</target>
+
+	<!-- ====================================== -->
+	<!-- 			PSDCMS-NPJ-Start         -->
+	<!-- ====================================== -->
+	<target name="PSDCMS-Start">
+		<java classname="${run.beanshell-console.classname}" classpathref="beanshell-classpath" fork="yes" failonerror="no">
+			<arg line="PSDCMS-NPJ-Start.bsh" />
+			<jvmarg line="${jvm.parameters}" />
+		</java>
+	</target>
+
+
+</project>

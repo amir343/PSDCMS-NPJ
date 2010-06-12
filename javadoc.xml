@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="javadoc">
+<target name="javadoc">
+<javadoc access="private" author="true" classpath="/Users/Djui/My Applications/_Tools/eclipse/plugins/org.eclipse.swt.carbon.macosx_3.4.1.v3449c.jar:lib/fractal-adl.jar:lib/swt.jar:lib/jade.jar:lib/fractal.jar:lib/jade-fractal.jar:lib/julia-runtime.jar:lib/julia-mixins.jar:lib/julia-asm.jar:lib/dks.jar:lib/ow_deployment_scheduling.jar" destdir="doc" doctitle="DCMS Project Source Code Documentation" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" source="1.6" sourcefiles="src/psdcms/simulation/MatrixProductSimulation.java" sourcepath="src" splitindex="true" use="true" version="true"/>
+</target>
+</project>

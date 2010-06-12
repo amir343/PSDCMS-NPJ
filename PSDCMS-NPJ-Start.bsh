@@ -1,0 +1,7 @@
+source("init"); 
+
+print("Starting PSDCMS-NPJ");
+c = lookupcomp("PSDCMS-NPJ_0");
+lc=getitf(c, "lifecycle-controller");
+lc.startFc();
+print("PSDCMS-NPJ started");

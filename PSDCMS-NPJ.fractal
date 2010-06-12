@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE definition PUBLIC "-//objectweb.org//DTD Fractal ADL 2.0//EN" "classpath://org/objectweb/jasmine/jade/service/deployer/adl/xml/jadeApplication.dtd">
+
+<definition name="PSDCMS-NPJ">
+  <interface name="r" role="server" signature="java.lang.Runnable"/>
+  
+     
+  <component name="StartApp" definition="org.objectweb.jasmine.jade.ManagementType">
+       
+  <content class="psdcms.app.StartApp"/>
+  <controller desc="primitive"/>
+   
+  </component>
+  
+  
+  <component name="frontEnd">
+   
+    <interface name="fePublishTask" role="client" signature="psdcms.interfaces.FEPublishTask" contingency="optional" />
+    <interface name="resultAnnounce" role="server" signature="psdcms.interfaces.ResultAnnounce" contingency="optional" />
+    
+    
+    <content class="psdcms.frontend.FrontendImpl"/>
+    
+    <virtual-node name="lightweight1" resourceReqs="10"/>
+   
+   </component>
+   
+    
+  <component name="UserTask1">
+    
+    <interface name="fePublishTask" role="server" signature="psdcms.interfaces.FEPublishTask" contingency="optional" />
+    <interface name="utPublishTask" role="client" signature="psdcms.interfaces.UTPublishTask"  contingency="optional"/>
+    
+    <content class="psdcms.bagoftasks.Usertask"/>
+
+    <controller desc="primitive"/>
+
+    <virtual-node name="medium1" resourceReqs="950000"/>
+
+  </component>
+
+  <component name="UserTask2">
+    
+    <interface name="fePublishTask" role="server" signature="psdcms.interfaces.FEPublishTask" contingency="optional" />
+    <interface name="utPublishTask" role="client" signature="psdcms.interfaces.UTPublishTask"  contingency="optional"/>
+    
+    <content class="psdcms.bagoftasks.Usertask"/>
+
+    <controller desc="primitive"/>
+
+    <virtual-node name="medium2" resourceReqs="950000"/>
+
+  </component>
+
+  <component name="UserTask3">
+    
+    <interface name="fePublishTask" role="server" signature="psdcms.interfaces.FEPublishTask" contingency="optional" />
+    <interface name="utPublishTask" role="client" signature="psdcms.interfaces.UTPublishTask"  contingency="optional"/>
+    
+    <content class="psdcms.bagoftasks.Usertask"/>
+
+    <controller desc="primitive"/>
+
+    <virtual-node name="medium3" resourceReqs="950000"/>
+
+  </component>
+
+
+  <component name="Simulator1">
+    
+    <interface name="utPublishTask" role="server" signature="psdcms.interfaces.UTPublishTask" contingency="optional" />
+    <interface name="resultAnnounce" role="client" signature="psdcms.interfaces.ResultAnnounce" contingency="optional" />
+	
+    <content class="psdcms.simulation.Simulator"/>
+
+    <controller desc="primitive"/>
+
+    <virtual-node name="medium4" resourceReqs="950000"/>
+
+  </component>
+
+  <component name="Simulator2">
+    
+    <interface name="utPublishTask" role="server" signature="psdcms.interfaces.UTPublishTask" contingency="optional" />
+    <interface name="resultAnnounce" role="client" signature="psdcms.interfaces.ResultAnnounce" contingency="optional" />
+	
+    <content class="psdcms.simulation.Simulator"/>
+
+    <controller desc="primitive"/>
+
+    <virtual-node name="medium5" resourceReqs="950000"/>
+
+  </component>
+
+  <component name="Simulator3">
+    
+    <interface name="utPublishTask" role="server" signature="psdcms.interfaces.UTPublishTask" contingency="optional" />
+    <interface name="resultAnnounce" role="client" signature="psdcms.interfaces.ResultAnnounce" contingency="optional" />
+	
+    <content class="psdcms.simulation.Simulator"/>
+
+    <controller desc="primitive"/>
+
+    <virtual-node name="medium6" resourceReqs="950000"/>
+
+  </component>
+
+  <component name="Simulator4">
+    
+    <interface name="utPublishTask" role="server" signature="psdcms.interfaces.UTPublishTask" contingency="optional" />
+    <interface name="resultAnnounce" role="client" signature="psdcms.interfaces.ResultAnnounce" contingency="optional" />
+	
+    <content class="psdcms.simulation.Simulator"/>
+
+    <controller desc="primitive"/>
+
+    <virtual-node name="medium7" resourceReqs="950000"/>
+
+  </component>
+   
+</definition>
